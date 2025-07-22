@@ -39,7 +39,7 @@ Before you begin, ensure you have the following:
 
 ### Step 1: Prepare the Google Sheet 📄
 
-1.  **Create a Copy**: Make a copy of the [Ticketing System Template Google Sheet](https://docs.google.com/spreadsheets/d/1a2b3c4d5e/copy). This link will prompt you to create your own copy, which includes the necessary script.
+1.  **Create a Copy**: Make a copy of the [Ticketing System Template Google Sheet](https://docs.google.com/spreadsheets/d/1ZmXAURXe6KZyaIaFbbFxQaARn8-Weyg11CoTDvUJDj0/edit?usp=sharing).
 2.  **Verify Columns**: Your sheet should have the following columns (the template is pre-configured):
     - `A: Timestamp`
     - `B: Sender`
@@ -57,7 +57,7 @@ Before you begin, ensure you have the following:
 
 ### Step 2: Configure the Google Apps Script ⚙️
 
-1.  **Paste the Code**: If you used the template, the code is already there. Otherwise, paste the provided code into the script editor.
+1.  **Paste the Code**: If you used the template, the code is already there. Otherwise, paste the provided code [TicketingScript.gs] into the script editor.
 2.  **Set Script Properties (IMPORTANT)**:
     - In the Apps Script editor, go to **Project Settings** (the gear icon ⚙️ on the left).
     - Scroll down to **Script Properties** and click **Add script property**.
