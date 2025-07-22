@@ -1,7 +1,5 @@
 # IT Ticketing System: Slack & Google Sheets Integration 🤖
 
-This document outlines how to set up an automated IT ticketing system using a Slack Workflow to capture requests, which are then logged and enriched in a Google Sheet via a Google Apps Script.
-
 ---
 
 ## 📋 Table of Contents
