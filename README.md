@@ -33,7 +33,7 @@ Before you begin, ensure you have the following:
 
 - **Admin access** to your company's Slack workspace.
 - A **Google account** with access to Google Sheets and Google Apps Script.
-- A **Google Sheet** to act as the ticketing database. You can create a new one or use our [provided template](https://docs.google.com/spreadsheets/d/1a2b3c4d5e/copy).
+- A **Google Sheet** to act as the ticketing database. You can create a new one or use our [provided template](https://docs.google.com/spreadsheets/1ZmXAURXe6KZyaIaFbbFxQaARn8-Weyg11CoTDvUJDj0/copy).
 
 ---
 
