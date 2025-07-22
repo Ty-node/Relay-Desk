@@ -18,10 +18,14 @@
 ## 📖 Introduction
 
 This system uses a **Slack Workflow** to capture IT support requests triggered by an emoji reaction. These requests are automatically logged into a **Google Sheet**. A **Google Apps Script** then enriches this data by:
-- Fetching the original Slack message content.
-- Categorizing the ticket based on keywords.
-- Assigning a unique ticket ID.
-- Providing daily summary reports in a designated Slack channel.
+
+- Fetches the full text of a Slack message from a permalink.
+- Determines the user's location based on the Slack channel ID.
+- Categorizes the ticket by searching the message for keywords.
+- Assigns a unique, formatted Ticket ID.
+- Formats rows with colors based on location.
+- Periodically removes duplicate entries.
+- Sends a daily summary report of open tickets to a specified Slack channel.
 
 ---
 
