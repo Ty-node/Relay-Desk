@@ -13,7 +13,8 @@
  * 6. Periodically removes duplicate entries.
  * 7. Sends a daily summary report of open tickets to a specified Slack channel.
  *
- * @version 1.1 - Forever Edition
+ * @version 1.2 - Forever Edition
+ * 1.2 Changelong: Updated CreateOrReplaceDailyTriggers function.
  * @author Tyler Wong/Tendril Studio
  * 
  */
@@ -483,13 +484,13 @@ function createOrReplaceDailyTriggers() {
       Logger.log(`Deleted existing trigger for ${handlerFunction}.`);
     }
   }
-
-  // --- Create trigger for duplicate check and processing ---
+    // --- Create trigger for duplicate check and processing (runs before report) ---
   ScriptApp.newTrigger('removeDuplicatesAndProcess')
     .timeBased()
     .everyDays(1)
-    .atHour(9) // Runs around 9 AM
-    .inTimezone(SpreadsheetApp.getSpreadsheetTimeZone()) // Use the spreadsheet's timezone
+    .atHour(9)
+    .nearMinute(25) // Run at ~9:25 AM ET
+    .inTimezone('America/Toronto')
     .create();
   Logger.log('Created new trigger for removeDuplicatesAndProcess.');
 
@@ -497,11 +498,11 @@ function createOrReplaceDailyTriggers() {
   ScriptApp.newTrigger('sendDailyStatusReport')
     .timeBased()
     .everyDays(1)
-    .atHour(10) // Runs around 10 AM
-    .inTimezone(SpreadsheetApp.getSpreadsheetTimeZone()) // Use the spreadsheet's timezone
+    .atHour(9)
+    .nearMinute(30) // Run at ~9:30 AM ET
+    .inTimezone('America/Toronto')
     .create();
   Logger.log('Created new trigger for sendDailyStatusReport.');
 
-  // Provide feedback to the user that the setup was successful.
-  SpreadsheetApp.getUi().alert('✅ Success! New daily triggers have been created. The script will run on weekdays in the morning.');
+  SpreadsheetApp.getUi().alert('✅ Success! New daily triggers have been set for 9:30 AM ET (Weekdays only).');
 }
