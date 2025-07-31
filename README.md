@@ -162,5 +162,6 @@ This single workflow handles the entire ticket lifecycle.
     > 2. You may see a "Google hasn't verified this app" screen. Click **Advanced** and then **Go to (your script name) (unsafe)**.
     > 3. Review the permissions and click **Allow**.
 3.  **Verify Triggers**: Go to the **Triggers** page (the clock icon ⏰ on the left). You should see two new triggers: `removeDuplicatesAndProcess` and `sendDailyStatusReport`.
+4.  Set the Slack message link processing **OnChange Trigger** by selecting **+ Add Trigger** and then choose the function to run **processSlackMessageLinks**, verify the Select event source is **From Spreadsheet**, and lastly Select event type to **On change**.
 
 Your system is now live! Test it by reacting to a message in your helpdesk channel with your chosen emoji.
