@@ -1,4 +1,4 @@
-# IT Ticketing System: Slack & Google Sheets Integration 🤖
+# Relay-Desk: Slack & Google Sheets Integration 🤖
 
 ---
 
