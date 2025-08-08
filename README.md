@@ -1,21 +1,21 @@
-# Relay-Desk: Slack & Google Sheets Integration 🤖
+# Relay-Desk: Slack & Google Sheets Integration
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [📖 Introduction](#-introduction)
-- [✅ Prerequisites](#-prerequisites)
-- [🚀 Step-by-Step Implementation](#-step-by-step-implementation)
-  - [Step 1: Prepare the Google Sheet 📄](#step-1-prepare-the-google-sheet-)
-  - [Step 2: Configure the Google Apps Script ⚙️](#step-2-configure-the-google-apps-script-️)
-  - [Step 3: Set Up the Slack Bot 🤖](#step-3-set-up-the-slack-bot-)
-  - [Step 4: Create the Slack Workflow 🌊](#step-4-create-the-slack-workflow-)
-  - [Step 5: Final Authorization and Deployment 🎉](#step-5-final-authorization-and-deployment-)
+- [Introduction](#-introduction)
+- [Prerequisites](#-prerequisites)
+- [Step-by-Step Implementation](#-step-by-step-implementation)
+  - [Step 1: Prepare the Google Sheet](#step-1-prepare-the-google-sheet-)
+  - [Step 2: Configure the Google Apps Script](#step-2-configure-the-google-apps-script-️)
+  - [Step 3: Set Up the Slack Bot](#step-3-set-up-the-slack-bot-)
+  - [Step 4: Create the Slack Workflow](#step-4-create-the-slack-workflow-)
+  - [Step 5: Final Authorization and Deployment](#step-5-final-authorization-and-deployment-)
 
 ---
 
-## 📖 Introduction
+## Introduction
 
 This system uses a **Slack Workflow** to capture IT support requests triggered by an emoji reaction. These requests are automatically logged into a **Google Sheet**. A **Google Apps Script** then enriches this data by:
 
@@ -29,7 +29,7 @@ This system uses a **Slack Workflow** to capture IT support requests triggered b
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following:
 
@@ -39,9 +39,9 @@ Before you begin, ensure you have the following:
 
 ---
 
-## 🚀 Step-by-Step Implementation
+## Step-by-Step Implementation
 
-### Step 1: Prepare the Google Sheet 📄
+### Step 1: Prepare the Google Sheet
 
 1.  **Create a Copy**: Make a copy of the [Ticketing System Template Google Sheet](https://docs.google.com/spreadsheets/d/1ZmXAURXe6KZyaIaFbbFxQaARn8-Weyg11CoTDvUJDj0/edit?usp=sharing).
 2.  **Verify Columns**: Your sheet should have the following columns (the template is pre-configured):
@@ -92,7 +92,7 @@ Before you begin, ensure you have the following:
     - After installation, copy the **Bot User OAuth Token** (starts with `xoxb-`).
     - Paste this token into the **Script Properties** in your Google Apps Script as described in Step 2.
 
-### Step 4: Create the Slack Workflow 🌊
+### Step 4: Create the Slack Workflow 
 
 This single workflow handles the entire ticket lifecycle.
 
@@ -116,7 +116,7 @@ This single workflow handles the entire ticket lifecycle.
     - #### **Action: "Ticket Opened" Reply**
       - **Step**: "Send a message".
       - **Settings**: Check the box to **Reply in a thread** to the `Message that was reacted to`.
-      - **Message**: `<@(Person who sent the message that was reacted to)> your ticket has been opened! @it has been notified and will begin investigating. 🧑‍🚀`
+      - **Message**: `<@(Person who sent the message that was reacted to)> your ticket has been opened! @it has been notified and will begin investigating.`
       - **Button**: Add a button with the text `Close Ticket`.
 
     - #### **Action: Update Sheet to "Closed"**
@@ -151,7 +151,7 @@ This single workflow handles the entire ticket lifecycle.
 
 4.  **Publish** the workflow.
 
-### Step 5: Final Authorization and Deployment 🎉
+### Step 5: Final Authorization and Deployment�
 
 1.  **Save the Script**: In the Apps Script editor, click the **Save project** icon (💾).
 2.  **Run the Trigger Setup**:
@@ -161,7 +161,7 @@ This single workflow handles the entire ticket lifecycle.
     > 1. Click **Review permissions** and choose your Google account.
     > 2. You may see a "Google hasn't verified this app" screen. Click **Advanced** and then **Go to (your script name) (unsafe)**.
     > 3. Review the permissions and click **Allow**.
-3.  **Verify Triggers**: Go to the **Triggers** page (the clock icon ⏰ on the left). You should see two new triggers: `removeDuplicatesAndProcess` and `sendDailyStatusReport`.
+3.  **Verify Triggers**: Go to the **Triggers** page (the clock icon on the left). You should see two new triggers: `removeDuplicatesAndProcess` and `sendDailyStatusReport`.
 4.  Set the Slack message link processing **OnChange Trigger** by selecting **+ Add Trigger** and then choose the function to run **processSlackMessageLinks**, verify the Select event source is **From Spreadsheet**, and Select event type to **On change**. Lastly, click on **Save**.
 
 Your system is now live! Test it by reacting to a message in your helpdesk channel with your chosen emoji.
