@@ -59,11 +59,11 @@ Before you begin, ensure you have the following:
     - `L: Notes`
 3.  **Access Apps Script**: Open your new Google Sheet and navigate to **Extensions** > **Apps Script**.
 
-### Step 2: Configure the Google Apps Script ⚙️
+### Step 2: Configure the Google Apps Script
 
 1.  **Paste the Code**: If you used the template, the code is already there. Otherwise, paste the provided code [TicketingScript.gs] into the script editor.
 2.  **Set Script Properties (IMPORTANT)**:
-    - In the Apps Script editor, go to **Project Settings** (the gear icon ⚙️ on the left).
+    - In the Apps Script editor, go to **Project Settings** (the gear icon on the left).
     - Scroll down to **Script Properties** and click **Add script property**.
     > **Create a new property:**
     > - **Property**: `SLACK_BOT_TOKEN`
@@ -74,7 +74,7 @@ Before you begin, ensure you have the following:
     - `REPORTING_CHANNEL_ID`: The Slack Channel ID for daily summary reports.
     - `CHANNEL_TO_LOCATION_MAP`: Map your helpdesk Slack channel IDs to location names.
 
-### Step 3: Set Up the Slack Bot 🤖
+### Step 3: Set Up the Slack Bot
 
 1.  **Create a Slack App**:
     - Go to `api.slack.com/apps` and click **Create New App** > **From scratch**.
