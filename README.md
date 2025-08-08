@@ -151,9 +151,9 @@ This single workflow handles the entire ticket lifecycle.
 
 4.  **Publish** the workflow.
 
-### Step 5: Final Authorization and Deployment�
+### Step 5: Final Authorization and Deployment
 
-1.  **Save the Script**: In the Apps Script editor, click the **Save project** icon (💾).
+1.  **Save the Script**: In the Apps Script editor, click the **Save project** icon.
 2.  **Run the Trigger Setup**:
     - From the function dropdown list, select `createOrReplaceDailyTriggers` and click **Run**.
     > **Authorization Required**
